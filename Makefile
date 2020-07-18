@@ -15,28 +15,22 @@ endef
 build: ${PNGS}
 
 icons/os_%.png: src/os_%.svg
-	@echo OS
-	$(call convert,128)
+	$(call convert,256)
 
 icons/vol_%.png: src/vol_%.svg
-	@echo Volume
-	$(call convert,32)
-
-icons/func_%.png: src/func_%.svg
-	@echo Function
-	$(call convert,48)
-
-icons/selection_big.png: src/selection_big.svg
-	@echo Selection – Big
-	$(call convert,144)
-
-icons/selection_small.png: src/selection_small.svg
-	@echo Selection – Small
 	$(call convert,64)
 
+icons/func_%.png: src/func_%.svg
+	$(call convert,96)
+
+icons/selection_big.png: src/selection_big.svg
+	$(call convert,288)
+
+icons/selection_small.png: src/selection_small.svg
+	$(call convert,128)
+
 icons/mouse.png: src/mouse.svg
-	@echo Mouse
-	$(call convert,120)
+	$(call convert,240)
 
 clean:
 	rm -f ${PNGS}
